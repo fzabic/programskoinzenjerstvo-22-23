@@ -17,11 +17,12 @@ public abstract class Fuel extends BaseModel<Integer> implements IRefillable {
         this.current_percentage = current_percentage;
     }
 
-    public Double getCurrent_percentage() {
-        return current_percentage;
-    }
-
     public void setCurrent_percentage(Double current_percentage) {
         this.current_percentage = current_percentage;
+    }
+
+    @Override
+    public Double getCurrent_percentage() {
+        return current_percentage;
     }
 }
