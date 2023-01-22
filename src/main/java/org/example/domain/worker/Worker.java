@@ -33,6 +33,10 @@ public class Worker extends BaseModel<Integer> implements IValet, IFuelWorker{
         return vehicles.stream().mapToDouble(v -> v.calculateCharging() * salary).sum();
     }
 
+    public List<Vehicle> getVehicles(){
+        return vehicles;
+    }
+
     @Override
     public void fillUpVehicle(Vehicle vehicle) {
         if (vehicle.getFuel().needsRefill()) vehicle.getFuel().refill();
