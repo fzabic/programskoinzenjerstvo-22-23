@@ -3,6 +3,8 @@ package org.example.domain.vehicle;
 import org.example.domain.BaseModel;
 import org.example.domain.fuel.Fuel;
 import org.example.domain.fuel.IRefillable;
+import org.example.domain.vehicle.builder.IVehicleBuilder;
+
 
 public abstract class Vehicle extends BaseModel<Integer> implements ITransferable {
 
@@ -14,7 +16,7 @@ public abstract class Vehicle extends BaseModel<Integer> implements ITransferabl
         this(null, charge, fuel);
     }
 
-    protected Vehicle(Integer id, Double charge, Fuel fuel) {
+    public Vehicle(Integer id, Double charge, Fuel fuel) {
         super(id);
         this.charge = charge;
         this.fuel = fuel;

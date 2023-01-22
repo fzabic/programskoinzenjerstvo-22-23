@@ -1,6 +1,7 @@
 package org.example.domain.worker;
 
 import org.example.domain.BaseModel;
+import org.example.domain.train.Train;
 import org.example.domain.vehicle.Vehicle;
 
 import java.util.ArrayList;
@@ -38,8 +39,8 @@ public class Worker extends BaseModel<Integer> implements IValet, IFuelWorker{
     }
 
     @Override
-    public Boolean parkVehicle(Vehicle vehicle) {
+    public Boolean parkVehicle(Vehicle vehicle, Train train) {
         fillUpVehicle(vehicle);
-        return vehicles.add(vehicle);
+        return train.addTransferable(vehicle) && vehicles.add(vehicle);
     }
 }
